@@ -7,10 +7,11 @@ const Calendar = ({ courses }) => {
   const [subject, setSubject] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [platform, setPlatform] = useState("Email to teacher");
+  const [teacherEmail, setTeacherEmail] = useState("");
 
-  const platformOptions = ["Email to teacher", "Link with my MS Teams", "Submit in Class"];
+  const platformOptions = ["Email to teacher", "Link with my MS Teams", "Link with my Google Classroom", "Link to my EdModo", "Submit in Class"];
 
-  // Auto-detect platform based on matching course info when subject changes
+  // Auto-detect platform and teacher email based on subject (if matching course exists)
   useEffect(() => {
     if (subject.trim() !== "") {
       const matchedCourse = courses.find(
@@ -18,18 +19,26 @@ const Calendar = ({ courses }) => {
       );
       if (matchedCourse) {
         setPlatform(matchedCourse.platform);
+        setTeacherEmail(matchedCourse.teacherEmail || "");
       } else {
         setPlatform("Email to teacher");
+        setTeacherEmail("");
       }
     }
   }, [subject, courses]);
 
-  const addAssignment = () => {
-    const newAssignment = { subject, platform, dueDate };
+  const addAssignment = async () => {
+    const newAssignment = { subject, platform, dueDate, teacherEmail };
     setAssignments([...assignments, newAssignment]);
+    await fetch("http://localhost:5000/api/add-assignment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ subject, dueDate, platform, teacherEmail }),
+    });
     setSubject("");
     setDueDate("");
     setPlatform("Email to teacher");
+    setTeacherEmail("");
     setShowForm(false);
   };
 
@@ -67,6 +76,13 @@ const Calendar = ({ courses }) => {
               <option key={idx}>{option}</option>
             ))}
           </select>
+          <input
+            type="email"
+            placeholder="Teacher Email"
+            value={teacherEmail}
+            onChange={(e) => setTeacherEmail(e.target.value)}
+            className="w-full p-2 bg-black border border-blue-700 rounded mb-2 text-white"
+          />
           <div className="flex justify-end space-x-4">
             <button
               className="px-4 py-2 bg-gray-500 hover:bg-gray-400 rounded transition"

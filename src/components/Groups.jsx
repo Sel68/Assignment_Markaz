@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 const Groups = () => {
   const [groups, setGroups] = useState([
     {
-      groupName: "Group Project 1",
-      members: ["Alice", "Bob", "Charlie"]
+      groupName: "World Domination",
+      members: ["You", "Asta", "Noelle", "Dorothy"]
     },
     {
-      groupName: "Group Project 2",
-      members: ["David", "Eve"]
+      groupName: "DSA 131",
+      members: ["You", "Sheikh", "Jas"]
+    },
+    {
+      groupName: "HACK 151",
+      members: ["You", "Huzaifa", "Hashim", "Saleh", "Anas"]
     }
   ]);
   const [showForm, setShowForm] = useState(false);

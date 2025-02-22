@@ -3,11 +3,11 @@ import { useParams, Link } from "react-router-dom";
 
 const GroupWorkspace = () => {
   const { groupName } = useParams();
-  // Sample files for group workspace
+  // Sample files with Google Drive links
   const files = [
-    { fileName: "ProjectPlan.docx", uploader: "Huzaifa" },
-    { fileName: "Research.pdf", uploader: "Hashim" },
-    { fileName: "DesignMockup.png", uploader: "Saleh" },
+    { fileName: "ProjectPlan.docx", uploader: "You", driveLink: "https://docs.google.com/document/d/1_WGv7YZj94X4DXyKT5_p5VjsybfunC11aqNOmxUa3Vs/edit?usp=sharing" },
+    { fileName: "Research.pdf", uploader: "Huzaifa", driveLink: "https://docs.google.com/document/d/1qDwFTvTvnBVqt1yCJ3lYKnB9DrB-YpY4OYLoMZARTgE/edit?usp=sharing" },
+    { fileName: "DesignMockup.png", uploader: "Hashim", driveLink: "https://docs.google.com/document/d/1-FhQ198_NIGs_5I0vNyxBr7dEHB8-WGF8h4ZsUeVQno/edit?usp=sharing" },
   ];
 
   return (
@@ -16,7 +16,10 @@ const GroupWorkspace = () => {
       <ul className="space-y-2">
         {files.map((file, index) => (
           <li key={index} className="border border-blue-700 rounded p-2">
-            <span className="font-bold">{file.fileName}</span> - Uploaded by {file.uploader}
+            <a href={file.driveLink} target="_blank" rel="noopener noreferrer" className="text-primary font-bold">
+              {file.fileName}
+            </a>{" "}
+            - Uploaded by {file.uploader}
           </li>
         ))}
       </ul>

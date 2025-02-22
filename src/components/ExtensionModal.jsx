@@ -5,22 +5,32 @@ const ExtensionModal = ({ onClose }) => {
   const [draft, setDraft] = useState("");
 
   const generateDraft = () => {
-    // Dummy AI-generated draft email logic
-    const generatedDraft = `Dear Sir,
+    const generatedDraft = `Subject: Request for extension,
+    
+Dear Sir,
+    
+I am writing to kindly request an extension for the upcoming assignment because ${reason}.
 
-I hope this message finds you well. I’m writing to kindly request a brief extension for the upcoming assignment.
+I understand the importance of adhering to deadlines. However, given the circumstances, I would greatly appreciate some additional time to ensure quality of my work.
 
-Reason: ${reason}
-I understand deadlines are important, and I aim to submit quality work. Thank you for your consideration, and I apologize for the inconvenience.
+Please let me know if this would be possible. Thank you for your understanding and cooperation.
 
 Best regards,
 Pink Goose`;
     setDraft(generatedDraft);
   };
 
-  const sendRequest = () => {
-    // Simulate sending email (in a real application, you would call a backend API)
-    alert("Extension request sent to Professor!");
+  const sendRequest = async () => {
+    // Replace with actual teacher email and subject as needed.
+    const teacherEmail = "pinkgeese@assignmentmarkaz.com";
+    const subject = "Sample Assignment";
+    const response = await fetch("http://localhost:5000/api/request-extension", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reason, teacherEmail, subject }),
+    });
+    const data = await response.json();
+    alert(data.message);
     onClose();
   };
 

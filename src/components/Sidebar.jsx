@@ -1,36 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
+// Sidebar Component (src/components/Sidebar.js)
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Home, Book, Calendar, Users } from 'lucide-react';
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-black text-white flex flex-col">
-      <div className="p-6 text-2xl font-bold border-b border-blue-700">
-        Assignment Markaz
+    <div className="h-full w-64 bg-black text-white flex flex-col p-4">
+      <div className="flex items-center mb-8">
+        <img src="/logo.png" alt="Logo" className="h-12 w-12 mr-2" />
+        <h1 className="text-2xl font-bold">Assignment Markaz</h1>
       </div>
-      <nav className="flex-1 p-4">
-        <ul className="space-y-4">
-          <li>
-            <Link to="/" className="hover:text-primary">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/courses" className="hover:text-primary">Courses</Link>
-          </li>
-          <li>
-            <Link to="/calendar" className="hover:text-primary">Calendar</Link>
-          </li>
-          <li>
-            <Link to="/groups" className="hover:text-primary">Groups</Link>
-          </li>
-          <li>
-            <a href="#" className="hover:text-primary">Notifications</a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-primary">Settings</a>
-          </li>
-        </ul>
+      <nav className="flex flex-col gap-4">
+        <NavLink to="/" className={({ isActive }) => isActive ? 'text-blue-500 flex items-center' : 'flex items-center'}>
+          <Home className="mr-2" /> Dashboard
+        </NavLink>
+        <NavLink to="/courses" className={({ isActive }) => isActive ? 'text-blue-500 flex items-center' : 'flex items-center'}>
+          <Book className="mr-2" /> Courses
+        </NavLink>
+        <NavLink to="/calendar" className={({ isActive }) => isActive ? 'text-blue-500 flex items-center' : 'flex items-center'}>
+          <Calendar className="mr-2" /> Calendar
+        </NavLink>
+        <NavLink to="/groups" className={({ isActive }) => isActive ? 'text-blue-500 flex items-center' : 'flex items-center'}>
+          <Users className="mr-2" /> Groups
+        </NavLink>
       </nav>
-    </aside>
+    </div>
   );
 };
 
 export default Sidebar;
+
+// Ensure the 'logo.png' is present in the 'public' directory and then run the app.

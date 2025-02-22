@@ -1,14 +1,18 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import UploadAssignment from "./UploadAssignment";
 
 const AssignmentWorkspace = () => {
   const { assignmentSubject } = useParams();
-  // Sample files for assignment workspace
+  // Sample files for demonstration
   const files = [
-    { fileName: "Draft1.docx", uploader: "Student" },
-    { fileName: "Draft2.docx", uploader: "Student" },
-    { fileName: "FinalSubmission.pdf", uploader: "Student" },
+    { fileName: "Draft1.docx", uploader: "You" },
+    { fileName: "Draft2.docx", uploader: "You" },
+    { fileName: "FinalSubmission.pdf", uploader: "You" },
   ];
+
+  // For demo, assume teacherEmail is known or auto-detected (hardcode if needed)
+  const teacherEmail = "saadellahie@gmail.com";
 
   return (
     <div className="p-6">
@@ -20,6 +24,8 @@ const AssignmentWorkspace = () => {
           </li>
         ))}
       </ul>
+      {/* File upload component for assignments using email submission */}
+      <UploadAssignment teacherEmail={teacherEmail} subject={assignmentSubject} />
       <div className="mt-4">
         <Link to="/calendar" className="px-4 py-2 bg-primary hover:bg-blue-600 rounded transition">
           Back to Calendar

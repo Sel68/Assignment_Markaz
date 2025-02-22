@@ -1,0 +1,184 @@
+abubakarzm27@gmail.com
+
+
+
+
+
+I am participating in a Hackathon and the theme is 
+"AUTOMATING TASKS IN STUDENT LIFE: create solutions that improve student productivity & automation"
+
+
+I am building a web app that is an assignment manager and handles all logistics related to submission of assignments. The app has following features:
+
+1) Links to different platforms like Microsoft teams, google forms, emails for submitting assignments on.
+
+2) Student can add courses and specify their assignment submission platform. For example if student specifies ms teams for linear algebra course then student can upload assignment on the app and it will directly upload to ms teams. Similarly, if email of TA is specified, an email is shot to TA when student uploads assignment on app.
+
+3) App also has a schedule of assignments due and sends reminder for submission
+
+4) There is also an option to ask for deadline extensions. When student clicks on this option they specify in a reason and an email is drafted automatically using AI and shot to the teacher.
+
+5) There is an assignment workspace for each assignment. The student can upload drafts and incomplete works there. They can also upload the final assignment and choose what to submit finally.
+
+6) There is also an  option for collaborating on group works and assignments. Users can add their peers and share assignment deadline and a common assignment workspace.
+
+7) The app is connected student univerity email and microsoft teams. So whenever scores are uploaded, the grade of assignment is updated and shown in the app.
+
+I want to present this idea to a panel of judges. I only need a web interface that visualises the idea of all these features. The UI should be creative. Keep it blue and black. UI/UX should feel modern and classy. You can use any publicly available theme or template. 
+
+You are also allowed to improve on the above features.
+
+Read the above requirements carefully and help me do this.
+_______________________
+
+
+Give me the code for the web interface. You can use HTML, CSS, JS, React, Tailwind and anything esle to make the UI/UX feel modern and classy. The theme is blue and black.
+
+I want the stuff that I can simply run on my PopOS and present to the panel of judges
+_______________________________________________
+
+
+Make the following changes in the code:
+
+1) Courses tag in the sidebar leads you to the page where you can see all courses added on the assignment maanger. There is also an add course option and when you click on it, you can add the i) course name, ii) choose from the drop down menu Platform where assignments are to be submitted (example email, ms teams, submit in class), iii) Teacher name
+
+2) Calender tag on the sidebar leads you to a page where all the current due assignment can be seen. There is an option to add the a new assignment: you choose the subject and platform where to submit the assignment. 
+
+3) Groups tag on sidebar shows the shared assignment workspaces and the names of friends you are on the group project with
+
+
+_________________________________________________________
+
+Make the following changes:
+
+1) Under courses, if user selects email in the drop down he gets the option to enter the email address. Rename the drop down options to Email to teacher, Link with my MS Teams, Submit in Class
+
+2) In Calendar, when we go to the option add new assignment we get the option to choose subject. Then it automatically detects the platform to upload assignment on from information added in courses tab. Right now you can just select a random platform because we just want to show the idea. Then we also enter the due date in DD/MM//YY format.
+
+3) In groups tab there is an option to add a new group. Under all groups there is an option "Go to Shared Workspace" which leads to a workspace that contains files uploaded by group members. Right now just display random file names with uploader name infront of them. Because we just want to show an idea
+
+4) In calender infron of all assignment details, there is also an option to go to "Workspace". This button leads to page which has files uploaded related to that assignment. These files include draft files and final submission files. User can select the files and then go on upload and the assignment will be submitted.
+
+5) Remove the Request Extension button from top right.
+
+
+Read the above changes carefully and implement them.
+_________________________________
+
+change names in both worksapce. 
+
+_______________________________
+Make the following changes:
+
+1) In adding assignment in calendar after I choose the subject, then platform should appear.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+____________________________________________________________________________________________________
+Yes, an app can definitely provide a solution to this problem! Your idea addresses a common pain point for students—managing and submitting assignments across multiple platforms while keeping track of graded work. Here's how you can design an app to streamline this process:
+
+---
+
+### *Key Features of the App*
+1. *Unified Dashboard*:
+   - A central hub where students can view all their assignments, deadlines, and submission platforms in one place.
+   - Integrate with popular platforms like Google Classroom, Canvas, Blackboard, Moodle, etc.
+
+2. *Automated Submission*:
+   - Allow students to upload their assignments once, and the app automatically submits them to the required platforms based on teacher preferences.
+   - Include options for file format conversion (e.g., converting a Word doc to PDF if required).
+
+3. *Deadline Reminders*:
+   - Send notifications for upcoming deadlines, with options to customize reminders (e.g., 1 day before, 1 hour before).
+
+4. *Graded Work Tracking*:
+   - Fetch grades from different platforms and display them in a single dashboard.
+   - Provide analytics, such as average grades, progress over time, and performance by subject.
+
+5. *Teacher Preference Profiles*:
+   - Allow teachers to create profiles specifying their preferred submission platforms, file formats, and grading criteria.
+   - Students can view these preferences and ensure compliance.
+
+6. *Cross-Platform Sync*:
+   - Sync data across devices (mobile, desktop, web) so students can access their assignments and grades anywhere.
+
+7. *AI-Powered Assistance*:
+   - Use AI to suggest optimal times for completing assignments based on the student's schedule and deadlines.
+   - Provide tips for improving grades based on past performance.
+
+8. *Collaboration Tools*:
+   - Enable group assignment management, allowing students to collaborate and submit group work seamlessly.
+
+---
+
+### *How It Solves the Problem*
+- *Reduces Hassle*: Students no longer need to juggle multiple platforms or remember different submission methods.
+- *Saves Time*: Automated submissions and reminders eliminate manual effort.
+- *Improves Organization*: A unified dashboard keeps everything in one place, making it easier to track deadlines and grades.
+- *Enhances Compliance*: Ensures assignments are submitted according to teacher preferences, reducing the risk of losing marks.
+
+---
+
+### *Technical Implementation*
+1. *Backend*:
+   - Use APIs to integrate with existing learning management systems (LMS) like Google Classroom, Canvas, etc.
+   - Store user data securely in a cloud database.
+
+2. *Frontend*:
+   - Develop a user-friendly interface for both mobile (iOS/Android) and web.
+   - Use frameworks like React Native or Flutter for cross-platform compatibility.
+
+3. *AI/ML*:
+   - Implement AI for deadline prediction, grade analysis, and personalized recommendations.
+
+4. *Security*:
+   - Ensure data privacy and security, especially when handling student and teacher information.
+
+---
+
+### *Monetization Strategies*
+1. *Freemium Model*:
+   - Offer basic features for free and charge for advanced features like AI-powered insights or premium integrations.
+2. *Institutional Licensing*:
+   - Partner with schools or universities to offer the app as a campus-wide solution.
+3. *Ads*:
+   - Display non-intrusive ads for relevant student services (e.g., tutoring, study tools).
+
+---
+
+### *Potential Challenges*
+1. *Platform Integration*:
+   - Some LMS platforms may have limited API access, making integration difficult.
+2. *Adoption*:
+   - Convincing teachers and institutions to adopt the app may require demonstrating clear benefits.
+3. *Scalability*:
+   - Ensure the app can handle a large number of users and assignments without performance issues.
+
+---
+
+### *Next Steps for Your Hackathon*
+1. *Define the MVP (Minimum Viable Product)*:
+   - Focus on core features like unified dashboard, automated submission, and deadline reminders.
+2. *Create Wireframes*:
+   - Sketch out the app's UI/UX to visualize the user flow.
+3. *Build a Prototype*:
+   - Use tools like Figma or Adobe XD to create a clickable prototype.
+4. *Pitch Your Idea*:
+   - Highlight the problem, your solution, and the impact it will have on students' lives.
+
+---
+
+This app has the potential to make student life significantly easier and could be a game-changer in the education space. Good luck with your hackathon! Let me know if you need further help with the design or implementation. 🚀
